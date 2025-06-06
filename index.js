@@ -6,6 +6,6 @@ let message = document.getElementById("message");
 
 
 send.addEventListener("click", function() {
-    chat.innerHTML = chat.innerHTML + message.value;
-
+    chat.innerHTML = chat.innerHTML + "\n" + message.value;
+    chat.style.whiteSpace = "pre-line";
 })
