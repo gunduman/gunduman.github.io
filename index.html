@@ -4,15 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="experimental.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <style>
+        div {
+            overflow: auto;
+            background-color: #7c07b3;
+            color: white;
+            border-radius: 15px;
+            padding: 10px;
+        }
+    </style>
 
 </head>
 <body>
     <input type="text" id="message">
-    <input type="button" id="send">
-    <div style=" overflow: auto 400px; height: 100px; background-color: red;" id="chat"></div>
-    <!-- <p style="background-color: red;" id="chat"></p> -->
+    <input type="button" id="send" value="Send">
+    <button type="button" onclick="clear_all()">Clear</button>
+    <div id="chat"><h1>Chat</h1></div>
     <script src="index.js"></script>
 </body>
 </html>
