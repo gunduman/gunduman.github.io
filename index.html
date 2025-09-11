@@ -1,21 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="encryption.js"></script>
-    <script src="decryption.js"></script>
+    <title>Math Tips and Tricks</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+    <script src="crypt.js"></script>
 </head>
 <body>
-    <input placeholder="type your message here" type="text" id="toCode">
-    <button onclick="encode()">Encrypt</button>
-    <p style="color: rgb(0, 4, 255); font-size: x-large;" id="encoded">Type your message above</p>
+    <h1>Math is very important, here are a few ways to study:</h1>
+    <textarea id="inputText" placeholder="Enter your message here"></textarea><br>
+    <input type="text" id="secretKey" placeholder="Enter a secret key"><br>
+    <button onclick="encryptMessage()">Encrypt</button>
+    <button onclick="decryptMessage()">Decrypt</button><br>
+    <h2>Result:</h2>
+    <textarea id="outputText" readonly></textarea>
 
-    <input placeholder="type your code here" type="text" id="toDecode">
-    <button onclick="decode()">Decrypt</button>
-    <p style="color: rgb(255, 0, 0); font-size: x-large;" id="decoded">Type your code above</p>
-    
 </body>
-
 </html>
