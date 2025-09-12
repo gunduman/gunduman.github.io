@@ -1,22 +1,45 @@
+// script.js
 
+function encryptMessage() {
+    const message = document.getElementById('inputText').value;
+    const secretKey = document.getElementById('secretKey').value;
+    const outputText = document.getElementById('outputText');
 
-var encode = function(){
-var text = document.getElementById("toCode").value
-var encoded = [];
+    if (!message || !secretKey) {
+        alert("Please enter both a message and a secret key.");
+        return;
+    }
 
+    try {
+        // Encrypting using AES
+        // CryptoJS.AES.encrypt(plaintext, key)
+        const encrypted = CryptoJS.AES.encrypt(message, secretKey).toString();
+        outputText.value = encrypted;
+    } catch (error) {
+        console.error("Encryption error:", error);
+        alert("An error occurred during encryption.");
+    }
+}
 
+function decryptMessage() {
+    const encryptedMessage = document.getElementById('inputText').value; // Use the same text area to paste the encrypted message
+    const secretKey = document.getElementById('secretKey').value;
+    const outputText = document.getElementById('outputText');
 
-for(let i = 0; i < text.length; i++) {
-    encoded.push(text.charCodeAt(i))
-};
+    if (!encryptedMessage || !secretKey) {
+        alert("Please enter the encrypted message and the secret key.");
+        return;
+    }
 
-for(let i = 0; i < text.length; i++) {
-    encoded[i] = encoded[i].toString(16)
-};
-console.log("encoded: ", encoded);
-for(let i = 0; i < text.length; i++) {
-    encoded[i] = encoded[i].toString()
-};
-encoded = encoded.join("")
-document.getElementById('encoded').innerHTML = encoded
-};
+    try {
+        // Decrypting using AES
+        // CryptoJS.AES.decrypt(ciphertext, key)
+        const decrypted = CryptoJS.AES.decrypt(encryptedMessage, secretKey);
+        const originalText = decrypted.toString(CryptoJS.enc.Utf8); // Convert to UTF-8 string
+        outputText.value = originalText;
+    } catch (error) {
+        console.error("Decryption error:", error);
+        alert("An error occurred during decryption. Make sure the message and key are correct.");
+        outputText.value = "Decryption failed.";
+    }
+}
