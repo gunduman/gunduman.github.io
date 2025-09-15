@@ -1,5 +1,24 @@
 // script.js
 
+function copy() {
+    const copyText = document.getElementById('outputText');
+    navigator.clipboard.writeText(copyText.value);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 function encryptMessage() {
     const message = document.getElementById('inputText').value;
     const secretKey = document.getElementById('secretKey').value;
