@@ -10,5 +10,9 @@ var check = function() {
         window.location.replace("Different.html");
 
     }
+    if(document.getElementById("password").value == "118") {
+        document.getElementById("problem").innerHTML = "Correct!";
+
+    }
 
 }
