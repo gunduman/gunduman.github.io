@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRASHER</title>
     <script>
-        var crash = function() {
-            while(true){
-            crash()
-            console.log("you got crashed by khil");
-            }
+        function crash(x) {
+  if (x <= 0) return 0;
+  if (x == 1) return 1;
+  return fib(x - 1) + fib(x - 2);
+}
+// Calling with a value around 40 or higher can cause significant lag.
+fib(42); 
         }
     </script>
 </head>
 <body>
-    <button onclick="crash()">CLICK ME</button>
+    <button onclick="crash(12000)">CLICK ME</button>
 </body>
 </html>
