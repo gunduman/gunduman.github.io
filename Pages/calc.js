@@ -9,3 +9,4 @@ var clear = function() {
 var calculate = function() {
     document.getElementById("output").value = eval(document.getElementById("output").value);
 }
+
