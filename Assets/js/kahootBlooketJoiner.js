@@ -14,6 +14,6 @@ KahootButton.addEventListener("click",GoToKahoot);
 
 var GoToBlooket = function() {
     code = CodeElement.value;
-    alert(code)
-
+    link = "https://play.blooket.com/" + "?id=" + code;
+    window.location.href = link;
 }
